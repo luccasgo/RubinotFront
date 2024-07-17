@@ -1,0 +1,26 @@
+<div>
+  <h2>Online Characters in Ultimate Squad</h2>
+  <div class="buttons">
+    <button (click)="sortByName()">Sort by Name</button>
+    <button (click)="sortByLevel()">Sort by Level</button>
+    <button (click)="sortByVocation()">Sort by Vocation</button>
+    <button (click)="resetOrder()">Default</button>
+    <button (click)="fetchOnlineCharacters()">Update</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Level</th>
+        <th>Vocation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of onlineCharacters" (click)="copyToClipboard(character.name)">
+        <td>{{ character.name }}</td>
+        <td>{{ character.level }}</td>
+        <td><span class="vocation-icon">{{ getVocationIcon(character.vocation) }}</span> {{ character.vocation }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
