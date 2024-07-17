@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GuildService {
-  private apiUrl = 'https://rubinot-back-9ki4hbzqu-luccasgos-projects.vercel.app/api/guild';
+  private apiUrl = 'http://localhost:3000/guild';
 
   constructor(private http: HttpClient) {}
 
